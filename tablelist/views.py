@@ -4,11 +4,11 @@ from rest_framework import generics
 
 
 from .models import Companies
-from .serializers import CompaniesSerialize
+from .serializers import CompaniesSerializer
 
 class ModelList(generics.ListAPIView):
     queryset = Companies.objects.all()
-    serializer_class = CompaniesSerialize
+    serializer_class = CompaniesSerializer
 def model_list(request):
-    data = Companiesl.objects.all()
-    return render(request, 'templates/list.html', {'data': data})
+    data = Companies.objects.all()
+    return render(request, 'list.html', {'data': data})
